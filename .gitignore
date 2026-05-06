@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env
+*.local
+logs/
+uploads/
+**/__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+**/*.pkl
+**/*.pth
+**/*.csv
+.DS_Store
+test_soil_model.py
+soil_dataset/
