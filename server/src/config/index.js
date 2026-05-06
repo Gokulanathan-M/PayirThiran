@@ -3,7 +3,7 @@ dotenv.config();
 
 module.exports = {
   port: process.env.PORT || 5000,
-  mongoUri: process.env.MONGO_URI || 'mongodb://localhost:27017/crop_recommendation',
+  mongoUri: process.env.MONGO_URI || process.env.MONGO_URL || 'mongodb://localhost:27017/crop_recommendation',
   jwtSecret: process.env.JWT_SECRET || 'dev_secret_change_in_production',
   jwtExpire: process.env.JWT_EXPIRE || '7d',
   aiServiceUrl: process.env.AI_SERVICE_URL || 'http://localhost:8000',
