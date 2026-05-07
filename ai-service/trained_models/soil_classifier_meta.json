@@ -1,0 +1,14 @@
+{
+  "class_names": [
+    "Alluvial Soil",
+    "Black Soil",
+    "Cinder Soil",
+    "Red Soil"
+  ],
+  "num_classes": 4,
+  "image_size": 224,
+  "epochs_trained": 30,
+  "device": "cpu",
+  "best_test_acc": 0.9726,
+  "architecture": "ResNet18 (transfer learning)"
+}
