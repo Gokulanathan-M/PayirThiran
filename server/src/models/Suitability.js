@@ -16,6 +16,7 @@ const suitabilitySchema = new mongoose.Schema({
   soilAnalysis: {
     detectedType: String,
     pH: Number,
+    confidence: Number,
   },
   reasons: [String],
   improvements: [{

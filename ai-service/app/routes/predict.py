@@ -62,10 +62,11 @@ async def predict(
 
     # Build soil analysis response
     soil_resp = None
-    if soil_analysis or soilPH:
+    if soil_analysis or soilPH or soilType:
         soil_resp = {
             "detectedType": (soil_analysis or {}).get("detectedType") or soilType,
             "pH": soilPH,
+            "confidence": (soil_analysis or {}).get("confidence"),
             "nitrogen": None,
             "phosphorus": None,
             "potassium": None,

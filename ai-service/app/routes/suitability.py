@@ -41,6 +41,7 @@ async def check_suitability(
         with open(file_path, "wb") as f:
             shutil.copyfileobj(soilImage.file, f)
         soil_result = analyze_soil_image(file_path)
+        data["soil_analysis_result"] = soil_result
         if not data["soilType"] and soil_result.get("detectedType"):
             data["soilType"] = soil_result["detectedType"]
 

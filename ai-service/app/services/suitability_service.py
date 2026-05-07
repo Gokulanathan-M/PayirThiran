@@ -97,8 +97,13 @@ def compute_suitability(data: dict) -> dict:
     }
 
     soil_analysis = None
-    if data.get("soilType"):
-        soil_analysis = {"detectedType": data["soilType"], "pH": ph}
+    if data.get("soilType") or data.get("soil_analysis_result"):
+        analysis_result = data.get("soil_analysis_result") or {}
+        soil_analysis = {
+            "detectedType": analysis_result.get("detectedType") or data.get("soilType"),
+            "pH": ph,
+            "confidence": analysis_result.get("confidence")
+        }
 
     return {
         "suitabilityScore": score,

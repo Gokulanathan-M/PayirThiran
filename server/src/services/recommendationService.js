@@ -96,5 +96,12 @@ function generateFallbackRecommendation(input) {
     ],
   }));
 
-  return { crops, soilAnalysis: null };
+  return { 
+    crops, 
+    soilAnalysis: {
+      detectedType: input.soilType || 'Loamy',
+      pH: input.soilPH || 6.5,
+      confidence: 50.0 // Low confidence for fallback
+    } 
+  };
 }

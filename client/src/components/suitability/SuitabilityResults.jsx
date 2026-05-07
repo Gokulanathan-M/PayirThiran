@@ -36,11 +36,21 @@ export default function SuitabilityResults({ result, onReset }) {
 
       {/* Soil summary */}
       {soilAnalysis && (
-        <div className="bg-amber-50 rounded-xl p-5">
-          <h4 className="font-medium text-amber-800 mb-2">🧪 Soil Summary</h4>
-          <p className="text-sm text-amber-700">
-            Detected Type: {soilAnalysis.detectedType || 'N/A'} · pH: {soilAnalysis.pH || 'N/A'}
-          </p>
+        <div className="bg-amber-50 rounded-xl p-5 border border-amber-100">
+          <h4 className="font-medium text-amber-800 mb-2 flex items-center gap-2">
+            🧪 Soil Summary
+          </h4>
+          <div className="space-y-1">
+            <p className="text-sm text-amber-900 font-semibold">
+              Detected Type: <span className="text-amber-700">{soilAnalysis.detectedType || 'N/A'}</span>
+            </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-amber-700/80">
+              <span>pH: {soilAnalysis.pH || 'N/A'}</span>
+              {soilAnalysis.confidence && (
+                <span>Confidence: {soilAnalysis.confidence}%</span>
+              )}
+            </div>
+          </div>
         </div>
       )}
 

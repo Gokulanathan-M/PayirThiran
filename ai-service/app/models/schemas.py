@@ -47,6 +47,7 @@ class CropResult(BaseModel):
 class SoilAnalysis(BaseModel):
     detectedType: Optional[str] = None
     pH: Optional[float] = None
+    confidence: Optional[float] = None
     nitrogen: Optional[float] = None
     phosphorus: Optional[float] = None
     potassium: Optional[float] = None

@@ -43,6 +43,7 @@ const recommendationSchema = new mongoose.Schema({
   soilAnalysis: {
     detectedType: String,
     pH: Number,
+    confidence: Number,
     nitrogen: Number,
     phosphorus: Number,
     potassium: Number,
